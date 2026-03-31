@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "displayName": "Restringir região para West Europe",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Esta política garante que todos os recursos sejam implantados na região West Europe.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Location"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "location",
+            "notIn": [
+              "westeurope"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
